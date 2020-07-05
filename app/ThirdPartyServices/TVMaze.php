@@ -3,6 +3,7 @@ namespace App\ThirdPartyServices;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use App\Exceptions\InvalidRequestException;
 
 /**
  * TVMaze implementation
@@ -14,7 +15,7 @@ class TVMaze implements Service
         $q = $request->query('q');
 
         if ($q === null) {
-            return response()->json(['error' => 'Invalid request!'],400);
+           throw new InvalidRequestException();
         }
 
         $results = Http::get($this->endpoint($q))->json();
