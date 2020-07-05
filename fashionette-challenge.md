@@ -20,7 +20,7 @@
 
 2. More features of tvmaze api, like search schedule, country
 
-3. More validations of request query('name'), like regex check for some special symbols i.e '?', '!'
+3. More validations for request, like regex check for some special symbols i.e '?', '!'
 
 4. Authentication middleware?
 
