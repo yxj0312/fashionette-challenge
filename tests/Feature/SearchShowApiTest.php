@@ -15,4 +15,16 @@ class SearchShowApiTest extends TestCase
 
         $this->assertEquals($results[0]['show']['name'], 'Deadwood');
    }
+
+   /** @test */
+   function invalid_request_should_return_400_response()
+   {
+       $this->get('api/search/?invalid=deadwood')->assertStatus(400)->assertSee('Invalid request!');
+   }
+
+   /** @test */
+   function the_results_should_be_non_case_insensitive()
+   {
+       
+   }
 }

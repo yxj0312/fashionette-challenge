@@ -11,6 +11,10 @@ class ApiController extends Controller
     {
         $q = $request->query('q');
 
+        if ($q === null) {
+            return response()->json(['error' => 'Invalid request!'],400);
+        }
+
         return $results = Http::get("http://api.tvmaze.com/search/shows?q={$q}")->json();
     }
 }
