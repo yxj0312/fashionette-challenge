@@ -2,8 +2,6 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
@@ -39,5 +37,11 @@ class SearchShowApiTest extends TestCase
        $this->assertCount(3, Http::get("http://api.tvmaze.com/search/shows?q=deadwood")->json());
 
        $this->assertCount(1, $this->get('api/search/?q=deadwood')->json());
+   }
+
+   /** @test */
+   function it_returns_a_message_if_the_result_equals_to_null()
+   {
+       $this->get('api/search/?q=?!')->assertSee('No matched!');
    }
 }
