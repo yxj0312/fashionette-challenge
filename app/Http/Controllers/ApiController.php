@@ -15,6 +15,15 @@ class ApiController extends Controller
             return response()->json(['error' => 'Invalid request!'],400);
         }
 
-        return $results = Http::get("http://api.tvmaze.com/search/shows?q={$q}")->json();
+        $results = Http::get("http://api.tvmaze.com/search/shows?q={$q}")->json();
+
+        // use stripos to make non-case-sensitive
+        $filterResults = function($show) use ($q){   
+            return (stripos($show['show']['name'], $q) !== false);
+        };
+
+        $filtered = array_filter($results, $filterResults);
+
+        return $filtered;
     }
 }
