@@ -44,4 +44,4 @@
 
 6. Limit request numbers
 
-7. Mock some response by testing, no need to call real api in each tests.
+7. Mock some response by testing, avoid to call real api to make the test running faster
