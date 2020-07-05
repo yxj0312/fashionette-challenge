@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('search', 'ApiController@search')->name('api.search');
+Route::get('search', 'ApiController@search')->middleware('throttle:10,60')->name('api.search');

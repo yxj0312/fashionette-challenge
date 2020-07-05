@@ -44,4 +44,14 @@ class SearchShowApiTest extends TestCase
    {
        $this->get('api/search/?q=?!')->assertSee('No matched!');
    }
+
+   /** @test */
+   function it_should_throw_error_429_when_two_many_requests()
+   {
+       foreach (range(0, 9) as $attempt) {
+           $this->get('api/search/?q=deadwood');
+       }
+
+       $this->get('api/search/?q=deadwood')->assertStatus(429);
+   }
 }
