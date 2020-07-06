@@ -34,7 +34,7 @@
 
 ## Thinkings of Optimizations
 
-### How you think the API can be evolved in the future
+### How do you think this API can be evolved in the future
 
 1. More third party services, not only TVMaze api
 
