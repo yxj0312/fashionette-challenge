@@ -30,6 +30,9 @@
 
 7. Open the browser, the api route is under: ```api/search/?q=deadwood```
 
+## [See all the commits here](https://github.com/yxj0312/fashionette-challenge/commits/master)
+
+
 ## Thinkings of Optimizations
 
 1. More third party services, not only TVMaze api
