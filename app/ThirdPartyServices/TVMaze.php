@@ -14,6 +14,7 @@ class TVMaze implements Service
     {
         $q = $request->query('q');
 
+        // no query, return invalid request exception, and 400.
         if ($q === null) {
            throw new InvalidRequestException();
         }

@@ -32,8 +32,9 @@
 
 ## [See all the commits here](https://github.com/yxj0312/fashionette-challenge/commits/master)
 
-
 ## Thinkings of Optimizations
+
+### How you think the API can be evolved in the future
 
 1. More third party services, not only TVMaze api
 
@@ -41,10 +42,10 @@
 
 3. More validations for request, like regex check for some special symbols i.e '?', '!'
 
-4. Authentication middleware?
+4. Authentication middleware
 
 5. Design pattern: Decorator, Adapter, Strategy
 
 6. Limit request numbers
 
-7. Mock some response by testing, avoid to call real api to make the test running faster
+7. Mocking some response by testing, avoid to call real api to make the test running faster
